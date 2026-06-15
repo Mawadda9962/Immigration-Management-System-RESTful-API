@@ -18,7 +18,10 @@ public class ApplicantService {
 
 public Applicant saveApplicant(Applicant applicant){
     if (applicant.getPassportNumber() == null || applicant.getPassportNumber().isEmpty()){
-        throw new RuntimeException("Passport number is required");
+        throw new RuntimeException("Error:Passport number is required");
+    }
+    if (applicant.getFirstName() == null || applicant.getLastName() ==null){
+        throw new RuntimeException("Error:First Name and Last Name are required");
     }
 }
 
