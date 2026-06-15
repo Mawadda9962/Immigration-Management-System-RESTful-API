@@ -11,19 +11,42 @@ public class GlobalExceptionHandler {
 
     //Handles Immigration System Exceptions (404 - Resource Not Found)
     @ExceptionHandler(SystemExceptions.class)
-    public ResponseEntity<ErrorResponse> handleSystemExceptions(SystemExceptions ex, WebRequest request){
+    public ResponseEntity<ErrorResponse> handleResourceNotFound(SystemExceptions ex, WebRequest request) {
         ErrorResponse errorResponse = new ErrorResponse(
-                HttpStatus.NOT_FOUND,
+                HttpStatus.NOT_FOUND ,
                 HttpStatus.NOT_FOUND.value(),
-                HttpStatus.NOT_FOUND.getReasonPhrase(),
+                "Hello",
                 ex.getMessage(),
-                request.getDescription(false).replace("uri=","")
-        );
+                request.getDescription(false).replace("uri=", ""));
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
     }
 
     //Handle Any Unexpected System Crashes
+    @ExceptionHandler(Exceptions.class)
+    public ResponseEntity<ErrorResponse> handleExceptions(Exceptions ex, WebRequest request) {
+        ErrorResponse errorResponse = new ErrorResponse(
+                ex.getStatus(),
+                ex.getStatus().value(),
+                ex.getStatus().getReasonPhrase(),
+                ex.getMessage(),
+                request.getDescription(false).replace("uri=", "")
+        );
+        return ResponseEntity.status(ex.getStatus()).body(errorResponse);
+    }
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ErrorResponse> handleRuntimeException(RuntimeException ex, WebRequest request) {
+        ErrorResponse errorResponse = new ErrorResponse(
+                HttpStatus.BAD_REQUEST,
+                HttpStatus.BAD_REQUEST.value(),
+                "Bad Request",
+                ex.getMessage(),
+                request.getDescription(false).replace("uri=", "")
+        );
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    }
+
+    // Handles Any Unexpected System Crashes (Fallback Safety Net)
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGlobalException(Exception ex, WebRequest request) {
         ErrorResponse errorResponse = new ErrorResponse(
@@ -34,6 +57,6 @@ public class GlobalExceptionHandler {
                 request.getDescription(false).replace("uri=", "")
         );
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
-        }
     }
 
+    }
