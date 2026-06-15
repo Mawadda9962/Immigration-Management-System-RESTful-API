@@ -13,6 +13,8 @@ public class Application extends Person {
     private Long id;
     private String passportNumber;
     private String nationality;
+    private boolean criminalRecorde;
+
 
 
 
