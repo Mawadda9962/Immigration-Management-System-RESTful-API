@@ -14,6 +14,8 @@ public class ImmigrationOfficer extends Person{
     private  String badgeNumber;
     private String tank;
     private int clearanceLevel;
+    private boolean active;
+
 
 
 
