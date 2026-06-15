@@ -1,4 +1,6 @@
 package Entities;
 
-public class ImmigrationOfficer {
+@E\
+public class ImmigrationOfficer extends Person{
+
 }
