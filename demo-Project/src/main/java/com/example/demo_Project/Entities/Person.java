@@ -1,4 +1,4 @@
-package Entities;
+package com.example.demo_Project.Entities;
 
 import jakarta.persistence.MappedSuperclass;
 import lombok.AllArgsConstructor;

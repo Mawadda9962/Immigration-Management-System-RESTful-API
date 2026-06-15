@@ -1,4 +1,4 @@
-package Entities;
+package com.example.demo_Project.Entities;
 
 import jakarta.persistence.*;
 
@@ -17,7 +17,7 @@ public class ImmigrationOfficer extends Person{
     private boolean active;
 
     @ManyToMany
-    List<Center> centers;
+    Center centers;
 
     @OneToMany
     List<Interviews> interviews;
