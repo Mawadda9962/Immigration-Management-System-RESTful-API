@@ -44,8 +44,12 @@ public class ApplicantService {
             throw new SystemExceptions("Error:Last Name is required");
         }
 
-
-
+        Applicant applicant = new Applicant();
+        applicant.setFirstName(firstName);
+        applicant.setLastName(lastName);
+        applicant.setPassportNumber(passportNumber);
+        applicant.setNationality(nationality);
+        return applicantRepository.save(applicant);
     }
 
 }
