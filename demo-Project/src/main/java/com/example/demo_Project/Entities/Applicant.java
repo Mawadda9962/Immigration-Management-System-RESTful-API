@@ -22,9 +22,9 @@ public class Applicant extends Person {
 
 
 @OneToMany
-List<VisaApplication> visaApplications;
+private List<VisaApplication> visaApplications;
 
 @OneToMany
-List<Interviews> interviews;
+private List<Interview> interviews;
 
 }

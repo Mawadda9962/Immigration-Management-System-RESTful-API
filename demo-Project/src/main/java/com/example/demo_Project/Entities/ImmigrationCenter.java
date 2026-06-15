@@ -22,6 +22,6 @@ public class ImmigrationCenter {
     private int dailyCapacity;
 
     @OneToMany
-    private List<Officer> officers;
+    private List<ImmigrationOfficer> officers;
 
 }

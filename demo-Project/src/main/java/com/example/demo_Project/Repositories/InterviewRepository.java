@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface InterviewRepository extends JpaRepository<Interview,Long> {
     List<Interview> findByOfficerIdAndInterviewDate(Long officerId, String date);
+
 }
