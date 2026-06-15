@@ -1,4 +1,9 @@
 package Entities;
 
-public class AsylumSeeker {
+import jakarta.persistence.Entity;
+
+@Entity
+public class AsylumSeeker extends Person {
+    private
+
 }
