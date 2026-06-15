@@ -2,12 +2,15 @@ package com.example.demo_Project.Service;
 
 
 import com.example.demo_Project.Entities.Applicant;
+import com.example.demo_Project.Entities.Interview;
 import com.example.demo_Project.Exceptions.Exceptions;
 import com.example.demo_Project.Exceptions.SystemExceptions;
 import com.example.demo_Project.Repositories.ApplicantRepository;
 import com.example.demo_Project.Repositories.InterviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ApplicantService {
@@ -60,7 +63,14 @@ public class ApplicantService {
         applicant.setCriminalRecorde(true);
         applicantRepository.save(applicant);
 
-
+        List<Interview> scheduledInterviews = interviewRepository.findByApplicantIdAndStatus(applicantId, "Scheduled");
+        if (!scheduledInterviews.isEmpty()) {
+            for (Interview interview : scheduledInterviews) {
+                interview.setStatus("Cancelled");
+                interviewRepository.save(interview);
+            }
+        }
+        return applicant;
     }
 
 }
