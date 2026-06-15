@@ -35,7 +35,7 @@ public class ApplicantService {
     public Applicant saveApplicant(String firstName, String lastName, String passportNumber, String nationality) {
 
         if (passportNumber == null || passportNumber.isEmpty()){
-            throw
+            throw new SystemExceptions("Error:Passport number is required");
         }
 
     }
