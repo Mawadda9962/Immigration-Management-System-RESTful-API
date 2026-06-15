@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
@@ -20,7 +22,10 @@ public class Application extends Person {
 
 
 @OneToMany
-    private
+List<VisaApplication> visaApplications;
+
+@OneToMany
+List<Interviews> interviews;
 
 
 
