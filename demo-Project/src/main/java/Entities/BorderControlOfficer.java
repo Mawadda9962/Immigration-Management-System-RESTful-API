@@ -6,4 +6,5 @@ import jakarta.persistence.Entity;
 public class BorderControlOfficer extends ImmigrationOfficer {
 
     private String assignedCheckpoint;
+    private boolean
 }
