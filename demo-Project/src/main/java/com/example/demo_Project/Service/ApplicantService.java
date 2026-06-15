@@ -16,7 +16,11 @@ public class ApplicantService {
     @Autowired
     InterviewRepository interviewRepository;
 
-public Applicant
+public Applicant saveApplicant(Applicant applicant){
+    if (applicant.getPassportNumber() == null || applicant.getPassportNumber().isEmpty()){
+        throw new RuntimeException("Passport number is required");
+    }
+}
 
 
 
