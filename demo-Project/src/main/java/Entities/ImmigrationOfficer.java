@@ -13,7 +13,8 @@ public class ImmigrationOfficer extends Person{
     private Long id;
     private  String badgeNumber;
     private String tank;
-    private String clearanceLevel;
+    private int clearanceLevel;
+
 
 
 
