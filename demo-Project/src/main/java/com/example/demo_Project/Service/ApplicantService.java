@@ -37,6 +37,9 @@ public class ApplicantService {
         if (passportNumber == null || passportNumber.isEmpty()){
             throw new SystemExceptions("Error:Passport number is required");
         }
+        if (firstName == null || lastName.isEmpty()){
+            throw
+        }
 
     }
 
