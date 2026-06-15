@@ -38,8 +38,13 @@ public class ApplicantService {
             throw new SystemExceptions("Error:Passport number is required");
         }
         if (firstName == null || lastName.isEmpty()){
-            throw
+            throw new SystemExceptions("Error:First name is required");
         }
+        if (lastName == null || lastName.isEmpty()){
+            throw new SystemExceptions("Error:Last Name is required");
+        }
+
+
 
     }
 
