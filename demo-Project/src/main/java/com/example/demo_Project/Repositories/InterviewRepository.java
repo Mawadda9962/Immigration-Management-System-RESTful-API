@@ -1,4 +1,10 @@
 package com.example.demo_Project.Repositories;
 
-public interface InterviewRepository {
+import com.example.demo_Project.Entities.Applicant;
+import com.example.demo_Project.Entities.Interview;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface InterviewRepository extends JpaRepository<Interview,Long> {
 }
