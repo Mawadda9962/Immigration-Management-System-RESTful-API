@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
-public class Application extends Person {
+public class Applicant extends Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
