@@ -4,6 +4,6 @@ import jakarta.persistence.Entity;
 
 @Entity
 public class AsylumSeeker extends Person {
-    private
+    private String countryOfOrigin;
 
 }
