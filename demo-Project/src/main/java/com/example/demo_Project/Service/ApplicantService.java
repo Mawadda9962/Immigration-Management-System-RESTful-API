@@ -1,6 +1,7 @@
 package com.example.demo_Project.Service;
 
 
+import com.example.demo_Project.Entities.Applicant;
 import com.example.demo_Project.Repositories.ApplicantRepository;
 import com.example.demo_Project.Repositories.InterviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class ApplicantService {
     @Autowired
     InterviewRepository interviewRepository;
 
-
+public Applicant
 
 
 
