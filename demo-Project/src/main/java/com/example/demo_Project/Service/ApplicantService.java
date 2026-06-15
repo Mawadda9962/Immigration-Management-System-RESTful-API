@@ -16,15 +16,18 @@ public class ApplicantService {
     @Autowired
     InterviewRepository interviewRepository;
 
-public Applicant saveApplicant(Applicant applicant){
-    if (applicant.getPassportNumber() == null || applicant.getPassportNumber().isEmpty()){
+public Applicant saveApplicant(Applicant applicant) {
+    if (applicant.getPassportNumber() == null || applicant.getPassportNumber().isEmpty()) {
         throw new RuntimeException("Error:Passport number is required");
     }
-    if (applicant.getFirstName() == null || applicant.getLastName() ==null){
-        throw new RuntimeException("Error:First Name and Last Name are required");
+    if (applicant.getFirstName() == null || applicant.getFirstName().isEmpty()) {
+        throw new RuntimeException("Error:first name is required");
     }
+    if (applicant.getLastName() == null || applicant.getLastName().isEmpty()) {
+        throw new RuntimeException("Error:Last name is required");
+    }
+    return applicantRepository.save(applicant);
 }
-
 
 
 }
