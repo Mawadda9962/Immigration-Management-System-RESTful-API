@@ -12,7 +12,8 @@ public class Application extends Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String passportNumber;
-    private String
+    private String nationality;
+
 
 
 
