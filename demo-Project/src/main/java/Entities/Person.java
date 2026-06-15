@@ -1,4 +1,4 @@
-package com.example.demo_Project;
+package Entities;
 
 import jakarta.persistence.MappedSuperclass;
 import lombok.AllArgsConstructor;
@@ -17,4 +17,14 @@ public class Person {
     private String phoneNumber;
     private String email;
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", gender='" + gender + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

@@ -1,4 +1,12 @@
 package Entities;
 
-public class Application {
+import jakarta.persistence.Entity;
+
+@Entity
+public class Application extends Person {
+
+    private
+
+
+
 }
