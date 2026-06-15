@@ -5,6 +5,6 @@ import jakarta.persistence.Entity;
 @Entity
 public class AsylumSeeker extends Person {
     private String countryOfOrigin;
-
+    private String sponsorOrganization;
 
 }
