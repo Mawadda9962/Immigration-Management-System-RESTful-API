@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface OfficerRepository extends JpaRepository<ImmigrationOfficer, Long> {
-    List<ImmigrationOfficer> findByRank(String rank);
-    List<ImmigrationOfficer> findByOfficerRankAndClearanceLevelGreaterThanEqual(String rank, int minimumClearanceLevel);
+    List<ImmigrationOfficer> findByOfficerRank(String officerRank);
+    List<ImmigrationOfficer> findByOfficerRankAndClearanceLevelGreaterThanEqual(String officerRank, int minimumClearanceLevel);
 }
