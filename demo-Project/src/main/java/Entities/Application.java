@@ -27,8 +27,4 @@ List<VisaApplication> visaApplications;
 @OneToMany
 List<Interviews> interviews;
 
-
-
-
-
 }

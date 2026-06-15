@@ -1,9 +1,9 @@
 package Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
+
 
 @Entity
 public class ImmigrationOfficer extends Person{
@@ -12,14 +12,13 @@ public class ImmigrationOfficer extends Person{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private  String badgeNumber;
-    private String tank;
+    private String rank;
     private int clearanceLevel;
     private boolean active;
 
+    @ManyToMany
+    List<Center> centers;
 
-
-
-
-
-
+    @OneToMany
+    List<Interviews> interviews;
 }
