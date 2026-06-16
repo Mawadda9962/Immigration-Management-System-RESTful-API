@@ -53,9 +53,10 @@ public class VisaApplicationService {
         }
         visa.setHandlingOfficer(officer);
         return visaApplicationRepository.save(visa);
-
-
-
     }
+
+    //Process Visa
+    public VisaApplication processVisa
+
 
 }
