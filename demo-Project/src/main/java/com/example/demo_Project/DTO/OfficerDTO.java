@@ -1,5 +1,6 @@
 package com.example.demo_Project.DTO;
 
+import com.example.demo_Project.Entities.ImmigrationOfficer;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,12 @@ public class OfficerDTO {
     private String rank;
     private int clearanceLevel;
     private boolean active;
+
+    public static OfficerDTO convertToDTO(ImmigrationOfficer officer){
+        OfficerDTO dto = new OfficerDTO();
+        dto.setId(officer.getId());
+        dto.
+    }
 
 
 
