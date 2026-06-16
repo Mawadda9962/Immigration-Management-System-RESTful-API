@@ -4,6 +4,7 @@ import com.example.demo_Project.DTO.CenterDTO;
 import com.example.demo_Project.Entities.ImmigrationCenter;
 import com.example.demo_Project.Service.CenterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,12 +16,12 @@ public class CenterController {
 
 
     @PostMapping
-    public CenterDTO addCenter(@RequestBody ImmigrationCenter center){
-        return CenterDTO.convertToDTO(centerService.createCenter(center));
+    public ResponseEntity<CenterDTO> addCenter(@RequestBody ImmigrationCenter center){
+        return ResponseEntity.ok(CenterDTO.convertToDTO(centerService.createCenter(center)));
     }
 
     @GetMapping("/{id}")
-    public CenterDTO getCenterById(@PathVariable Long id){
-        return CenterDTO.convertToDTO(centerService.getCenterByID(id));
+    public ResponseEntity<CenterDTO> getCenterById(@PathVariable Long id){
+        return ResponseEntity.ok(CenterDTO.convertToDTO(centerService.getCenterByID(id)));
     }
 }
