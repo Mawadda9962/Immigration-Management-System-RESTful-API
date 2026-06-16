@@ -8,6 +8,7 @@ import com.example.demo_Project.Repositories.InterviewRepository;
 import com.example.demo_Project.Repositories.OfficerRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -51,6 +52,9 @@ public class OfficerService {
 
     //Find Officer by Rank with minimum clearance level
     public List<ImmigrationOfficer> findOfficerByRank(String rank, int minimumClearanceLevel){
+        List<ImmigrationOfficer> officers = officerRepository.findByOfficerRank(rank);
+        List<ImmigrationOfficer> result = new ArrayList<>()
+
 
     }
 
