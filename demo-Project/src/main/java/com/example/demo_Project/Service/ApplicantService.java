@@ -73,4 +73,8 @@ public class ApplicantService {
         return applicant;
     }
 
+    public List<Applicant> getAllApplicant(){
+        return applicantRepository.findAll();
+    }
+
 }
