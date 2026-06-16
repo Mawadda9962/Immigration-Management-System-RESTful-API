@@ -9,6 +9,7 @@ public class OfficerDTO {
     private Long id;
     private String firstName;
     private String lastName;
-    private
+    private String badgeNumber;
+
 
 }
