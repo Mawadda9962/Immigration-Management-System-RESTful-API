@@ -24,8 +24,9 @@ public class CenterService {
             throw Exceptions.badRequest("Center Type is required");
         }
         if (center.getDailyCapacity() <= 0){
-            throw Exceptions.badRequest("Daily Capacity musy")
+            throw Exceptions.badRequest("Daily Capacity must be grater than 0");
         }
+        return
 
 
 
