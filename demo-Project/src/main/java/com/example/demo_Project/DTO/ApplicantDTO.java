@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.core.SpringVersion;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 public class ApplicantDTO {
@@ -27,7 +30,9 @@ public class ApplicantDTO {
        return dto;
    }
 
-   public
+   public static List<ApplicantDTO> convertToDTO(List<Applicant> applicants){
+       List<ApplicantDTO> dtos = new ArrayList<>();
+   }
 
 
 
