@@ -25,9 +25,9 @@ public class ApplicantDTO {
        dto.setPassportNumber(applicant.getPassportNumber());
        dto.setCriminalRecorde(applicant.isCriminalRecorde());
        return dto;
-
    }
 
+   public
 
 
 
