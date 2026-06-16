@@ -6,10 +6,9 @@ import com.example.demo_Project.Entities.AsylumSeeker;
 import com.example.demo_Project.Service.ApplicantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("applicant")
@@ -18,7 +17,8 @@ public class ApplicantController {
     @Autowired
     ApplicantService applicantService;
 
-   @Autowired
+    @Autowired
+    ApplicantController applicantController;
 
     @PostMapping
     public ResponseEntity<ApplicantDTO> registerApplicant(@RequestBody Applicant applicant){
@@ -30,7 +30,9 @@ public class ApplicantController {
         return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantService.saveApplicant(asylumSeeker)));
     }
 
+    @GetMapping
+    public ResponseEntity<List<ApplicantDTO>> getAllApplicants(){
 
-
+    }
 
 }
