@@ -2,11 +2,13 @@ package com.example.demo_Project.Controllers;
 
 
 import com.example.demo_Project.DTO.OfficerDTO;
+import com.example.demo_Project.Entities.ImmigrationOfficer;
 import com.example.demo_Project.Repositories.OfficerRepository;
 import com.example.demo_Project.Service.OfficerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +23,9 @@ public class OfficerController {
     OfficerRepository officerRepository;
 
     @PostMapping
-    public ResponseEntity<OfficerDTO> hireOfficer()
+    public ResponseEntity<OfficerDTO> hireOfficer(@RequestBody ImmigrationOfficer officer){
+
+    }
 
 
 }
