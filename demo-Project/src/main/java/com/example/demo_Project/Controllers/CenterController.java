@@ -20,6 +20,9 @@ public class CenterController {
     }
 
     @GetMapping("/{id}")
+    public CenterDTO getCenterById(@PathVariable Long id){
+        return CenterDTO.convertToDTO(centerService.getCenterByID(id));
+    }
 
 
 
