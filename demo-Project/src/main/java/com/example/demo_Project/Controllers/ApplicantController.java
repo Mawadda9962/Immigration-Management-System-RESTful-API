@@ -34,7 +34,7 @@ public class ApplicantController {
         return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantService.getAllApplicant()));
     }
 
-    @GetMapping
+    @GetMapping("/search")
     public ResponseEntity<List<ApplicantDTO>> findByNationality(@RequestParam String nationality){
         return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantService.findByNationality(nationality)));
     }
