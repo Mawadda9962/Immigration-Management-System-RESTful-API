@@ -41,4 +41,8 @@ public class OfficerController {
 
     }
 
+    @PutMapping("/{id}/promote")
+    public ResponseEntity<OfficerDTO> promoteOfficer(@PathVariable Long id, @RequestParam String rank,
+                                                     @RequestParam int )
+
 }
