@@ -31,8 +31,12 @@ public class VisaApplicationService {
 
         if (applicant.isCriminalRecorde()){
             visa.setStatus("REJECTED");
-            visa.getVisaType("")
+            visa.setVisaType("Auto-rejected due to criminal flag");
+        }else {
+            visa.setStatus("PENDING");
         }
+        return visaApplicationRepository.save(visa)
+
     }
 
 
