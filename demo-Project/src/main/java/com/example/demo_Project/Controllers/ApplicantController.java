@@ -37,7 +37,11 @@ public class ApplicantController {
     }
 
     @GetMapping
-    public ResponseEntity
+    public ResponseEntity<List<ApplicantDTO>> findByNationality(@RequestParam String nationality){
+        return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantRepository.findByNationality(nationality)));
+    }
+
+    @P
 
 
 }
