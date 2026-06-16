@@ -25,8 +25,10 @@ public class OfficerService {
 
         officer.setOfficerRank(newOfficerRank);
         officer.setClearanceLevel(newClearanceLevel1);
-        return
+        return officerRepository.save(officer);
     }
+
+    public ImmigrationOfficer
 
 
 
