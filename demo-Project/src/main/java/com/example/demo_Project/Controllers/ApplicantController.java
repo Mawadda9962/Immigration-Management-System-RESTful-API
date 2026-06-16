@@ -41,7 +41,10 @@ public class ApplicantController {
         return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantRepository.findByNationality(nationality)));
     }
 
-    @P
+    @PutMapping("/{id}/flag")
+    public ResponseEntity<ApplicantDTO> flagCriminalRecord(@PathVariable Long id){
+        return ResponseEntity.ok(ApplicantDTO.convertToDTO())
+    }
 
 
 }
