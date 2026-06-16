@@ -1,5 +1,6 @@
 package com.example.demo_Project.Service;
 
+import com.example.demo_Project.Entities.ImmigrationCenter;
 import com.example.demo_Project.Entities.ImmigrationOfficer;
 import com.example.demo_Project.Exceptions.Exceptions;
 import com.example.demo_Project.Repositories.CenterRepository;
@@ -28,7 +29,18 @@ public class OfficerService {
         return officerRepository.save(officer);
     }
 
-    public ImmigrationOfficer
+    public ImmigrationOfficer transferOfficer(Long officerId, Long newCenterId){
+        ImmigrationOfficer officer = officerRepository.findById(officerId)
+                .orElseThrow(() -> Exceptions.notFound("Officer not found with id: " + officerId));
+
+        ImmigrationCenter center = centerRepository.findById(newCenterId)
+                .orElseThrow(() -> Exceptions.notFound("Center not found with id: " + newCenterId));
+
+        officer.setCenter(center);
+        return officerRepository.save(officer);
+
+
+    }
 
 
 
