@@ -17,7 +17,7 @@ public class OfficerService {
     @Override
     CenterRepository centerRepository;
 
-    //
+    //Officer with clearance validation
     public ImmigrationOfficer promoteOfficer(Long officerId, String newOfficerRank, int newClearanceLevel1){
         if (newClearanceLevel1 < 1 || newClearanceLevel1 > 5){ //Access Level of the officer
             throw Exceptions.badRequest("Clearance Level must be between 1 and 5");
@@ -30,6 +30,7 @@ public class OfficerService {
         return officerRepository.save(officer);
     }
 
+    //Transfer Oficer to
     public ImmigrationOfficer transferOfficer(Long officerId, Long newCenterId){
         ImmigrationOfficer officer = officerRepository.findById(officerId)
                 .orElseThrow(() -> Exceptions.notFound("Officer not found with id: " + officerId));
