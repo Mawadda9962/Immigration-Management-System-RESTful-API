@@ -1,7 +1,9 @@
 package com.example.demo_Project.Service;
 
+import com.example.demo_Project.Entities.Interview;
 import com.example.demo_Project.Repositories.ApplicantRepository;
 import com.example.demo_Project.Repositories.InterviewRepository;
+import com.example.demo_Project.Repositories.OfficerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,11 @@ public class InterviewService {
 
     @Autowired
     ApplicantRepository applicantRepository;
+
+    @Autowired
+    OfficerRepository officerRepository;
+
+    public Interview scheduleInterview()
 
 
 }
