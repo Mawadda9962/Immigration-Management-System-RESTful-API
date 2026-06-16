@@ -2,6 +2,7 @@ package com.example.demo_Project.Controllers;
 
 import com.example.demo_Project.DTO.ApplicantDTO;
 import com.example.demo_Project.Entities.Applicant;
+import com.example.demo_Project.Entities.AsylumSeeker;
 import com.example.demo_Project.Service.ApplicantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +26,9 @@ public class ApplicantController {
     }
 
     @PostMapping("/asylum")
+    public ResponseEntity<ApplicantDTO> registerAsylumSeeker(@RequestBody AsylumSeeker asylumSeeker) {
+        return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantService.saveApplicant(asylumSeeker)));
+    }
 
 
 
