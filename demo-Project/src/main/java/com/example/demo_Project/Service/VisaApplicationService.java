@@ -60,6 +60,7 @@ public class VisaApplicationService {
         VisaApplication visa = visaApplicationRepository.findById(visaId)
                 .orElseThrow(() -> Exceptions.notFound("Visa application not found with id: " + visaId));
 
+        if (!newStatus.equals("APPROVED") && !)
     }
 
 

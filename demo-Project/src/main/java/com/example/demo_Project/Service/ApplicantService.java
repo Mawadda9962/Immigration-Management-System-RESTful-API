@@ -63,10 +63,10 @@ public class ApplicantService {
         applicant.setCriminalRecorde(true);
         applicantRepository.save(applicant);
 
-        List<Interview> scheduledInterviews = interviewRepository.findByApplicantIdAndStatus(applicantId, "Scheduled");
+        List<Interview> scheduledInterviews = interviewRepository.findByApplicantIdAndStatus(applicantId, "SCHEDULED");
         if (!scheduledInterviews.isEmpty()) {
             for (Interview interview : scheduledInterviews) {
-                interview.setStatus("Cancelled");
+                interview.setStatus("CANCELLED");
                 interviewRepository.save(interview);
             }
         }
