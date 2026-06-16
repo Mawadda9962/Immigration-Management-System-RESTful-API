@@ -46,6 +46,8 @@ public class VisaApplicationService {
         ImmigrationOfficer officer = officerRepository.findById(officerId)
                 .orElseThrow(() -> Exceptions.notFound("Officer not found with id: " + officerId));
 
+        if ()
+
 
 
     }
