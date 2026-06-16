@@ -23,8 +23,4 @@ public class CenterController {
     public CenterDTO getCenterById(@PathVariable Long id){
         return CenterDTO.convertToDTO(centerService.getCenterByID(id));
     }
-
-
-
-
 }
