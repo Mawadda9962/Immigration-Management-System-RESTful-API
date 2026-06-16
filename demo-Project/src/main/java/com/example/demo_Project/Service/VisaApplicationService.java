@@ -1,6 +1,7 @@
 package com.example.demo_Project.Service;
 
 import com.example.demo_Project.Entities.Applicant;
+import com.example.demo_Project.Entities.ImmigrationOfficer;
 import com.example.demo_Project.Entities.VisaApplication;
 import com.example.demo_Project.Exceptions.Exceptions;
 import com.example.demo_Project.Repositories.ApplicantRepository;
@@ -39,6 +40,13 @@ public class VisaApplicationService {
     }
 
     public VisaApplication assignOfficer(Long visaId, Long officerId){
+        VisaApplication visa = visaApplicationRepository.findById(visaId)
+                .orElseThrow(() -> Exceptions.notFound("Visa application not found with id: " + visaId));
+
+        ImmigrationOfficer officer = officerRepository.findById(officerId)
+                .orElseThrow(() -> Exceptions.notFound("Officer not found with id: " + officerId));
+
+
 
     }
 
