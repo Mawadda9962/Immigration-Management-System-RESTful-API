@@ -24,10 +24,8 @@ public class InterviewDTO {
         dto.setInterviewDate(interview.getInterviewDate());
         dto.setStatus(interview.getStatus());
         dto.setPurpose(interview.getPurpose());
-        if (interview.getApplicant() != null)
-            dto.setApplicantId(interview.getApplicant().getId());
-        if (interview.getOfficer() != null)
-            dto.setOfficerId(interview.getOfficer().getId());
+        dto.setApplicantId(interview.getApplicant().getId());
+        dto.setOfficerId(interview.getOfficer().getId());
         return dto;
     }
 
