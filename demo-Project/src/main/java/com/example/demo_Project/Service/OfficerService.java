@@ -14,7 +14,9 @@ public class OfficerService {
     @Override
     CenterRepository centerRepository;
 
-    public ImmigrationOfficer promoteOfficer(Long officerId, String)
+    public ImmigrationOfficer promoteOfficer(Long officerId, String newRank, int newClearanceLevel1){
+
+    }
 
 
 
