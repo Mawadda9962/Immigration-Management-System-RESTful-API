@@ -25,7 +25,13 @@ public class VisaApplicationService {
         Applicant applicant = applicantRepository.findById(applicantId)
                 .orElseThrow(() -> Exceptions.notFound("Applicant not found with id: " + applicantId));
 
+        VisaApplication visa = new VisaApplication();
+        visa.setApplicant(applicant);
+        visa.setVisaType(visaType);
 
+        if (applicant.isCriminalRecorde()){
+            visa.setStatus("REJECTED");
+        }
     }
 
 
