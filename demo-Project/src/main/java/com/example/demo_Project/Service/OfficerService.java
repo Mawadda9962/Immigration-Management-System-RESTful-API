@@ -4,22 +4,23 @@ import com.example.demo_Project.Entities.ImmigrationOfficer;
 import com.example.demo_Project.Exceptions.Exceptions;
 import com.example.demo_Project.Repositories.CenterRepository;
 import com.example.demo_Project.Repositories.InterviewRepository;
+import com.example.demo_Project.Repositories.OfficerRepository;
 import org.springframework.stereotype.Service;
 
 @Service
 public class OfficerService {
 
     @Override
-    OfficerService officerService;
+    OfficerRepository officerRepository;
 
     @Override
     CenterRepository centerRepository;
 
     public ImmigrationOfficer promoteOfficer(Long officerId, String newOfficerRank, int newClearanceLevel1){
-        if (newClearanceLevel1 < 1 || newClearanceLevel1 > 5){
+        if (newClearanceLevel1 < 1 || newClearanceLevel1 > 5){ //Access Level of the officer
             throw Exceptions.badRequest("Clearance Level must be between 1 and 5");
-
         }
+        ImmigrationOfficer officer = officerRepository.findById(officerId)
     }
 
 
