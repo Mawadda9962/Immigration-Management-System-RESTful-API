@@ -18,6 +18,14 @@ public class ApplicantDTO {
    public static ApplicantDTO convertToDTO(Applicant applicant){
        ApplicantDTO dto = new ApplicantDTO();
 
+       dto.setId(applicant.getId());
+       dto.setFirstName(applicant.getFirstName());
+       dto.setLastName(applicant.getLastName());
+       dto.setNationality(applicant.getNationality());
+       dto.setPassportNumber(applicant.getPassportNumber());
+       dto.setCriminalRecorde(applicant.isCriminalRecorde());
+       return dto;
+
    }
 
 
