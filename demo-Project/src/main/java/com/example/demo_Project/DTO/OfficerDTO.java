@@ -10,6 +10,8 @@ public class OfficerDTO {
     private String firstName;
     private String lastName;
     private String badgeNumber;
+    private String rank;
+    private
 
 
 }
