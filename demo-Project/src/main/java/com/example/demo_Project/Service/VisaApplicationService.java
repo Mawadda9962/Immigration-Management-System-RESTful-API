@@ -10,6 +10,8 @@ import com.example.demo_Project.Repositories.VisaApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.awt.font.TextHitInfo;
+
 @Service
 public class VisaApplicationService {
 
@@ -60,8 +62,11 @@ public class VisaApplicationService {
         VisaApplication visa = visaApplicationRepository.findById(visaId)
                 .orElseThrow(() -> Exceptions.notFound("Visa application not found with id: " + visaId));
 
-        if (!newStatus.equals("APPROVED") && !)
+        if (!newStatus.equals("APPROVED") && !newStatus.equals("REJECTED")){
+            throw Exceptions.badRequest("Status must be APPROVED or REJECTED");
+        }
+        visa.setStatus(newStatus);
+        visa.setOfficerNotes(notes);
+        return visaApplicationRepository.save(visa)
     }
-
-
 }
