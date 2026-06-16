@@ -11,14 +11,19 @@ public class OfficerDTO {
     private String firstName;
     private String lastName;
     private String badgeNumber;
-    private String rank;
-    private int clearanceLevel;
+    private String officerRank;
     private boolean active;
 
     public static OfficerDTO convertToDTO(ImmigrationOfficer officer){
         OfficerDTO dto = new OfficerDTO();
         dto.setId(officer.getId());
-        dto.
+        dto.setFirstName(officer.getFirstName());
+        dto.setLastName(officer.getLastName());
+        dto.setBadgeNumber(officer.getBadgeNumber());
+        dto.setOfficerRank(officer.getOfficerRank());
+        dto.setActive(officer.isActive());
+        return dto;
+
     }
 
 
