@@ -38,7 +38,7 @@ public class OfficerController {
 
     @GetMapping
     public ResponseEntity<List<OfficerDTO>> getAllOfficers(){
-        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerRepository.))
+        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.fi))
     }
 
 }

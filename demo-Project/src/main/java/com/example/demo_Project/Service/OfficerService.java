@@ -77,4 +77,6 @@ public class OfficerService {
         return officerRepository.save(officer);
     }
 
+    public ImmigrationOfficer
+
 }
