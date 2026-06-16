@@ -21,6 +21,10 @@ public class OfficerService {
             throw Exceptions.badRequest("Clearance Level must be between 1 and 5");
         }
         ImmigrationOfficer officer = officerRepository.findById(officerId)
+                .orElseThrow(() -> Exceptions.notFound("Officer not found with id: " + officerId));
+
+        officer.setOfficerRank(newOfficerRank);
+        officer.getClearanceLevel(newClearanceLevel1);
     }
 
 
