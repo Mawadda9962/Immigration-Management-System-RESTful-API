@@ -48,9 +48,11 @@ public class VisaApplicationService {
 
         if (visa.getVisaType().equals("Asylum")){
             if (officer.getClearanceLevel() != 4 && officer.getClearanceLevel() != 5){
-                throw Exceptions.badRequest("\"Asylum visas require officer with clearance level 4 or 5")
+                throw Exceptions.badRequest("Asylum visas require officer with clearance level 4 or 5");
             }
         }
+        visa.setHandlingOfficer(officer);
+        return visaApplicationRepository.save(visa);
 
 
 
