@@ -36,4 +36,8 @@ public class ApplicantController {
         return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantRepository.findAll()));
     }
 
+    @GetMapping
+    public ResponseEntity
+
+
 }
