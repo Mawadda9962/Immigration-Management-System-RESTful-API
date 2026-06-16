@@ -20,18 +20,18 @@ public class CenterService {
         if (center.getLocationCountry() == null || center.getLocationCountry().isBlank()){
             throw Exceptions.badRequest("Location country is required");
         }
-        if (center.getType() ==null || center.getType().isBlank()){
+        if (center.getType() == null || center.getType().isBlank()){
             throw Exceptions.badRequest("Center Type is required");
         }
         if (center.getDailyCapacity() <= 0){
             throw Exceptions.badRequest("Daily Capacity must be grater than 0");
         }
-        return
-
-
-
-
+        return centerRepository.save(center);
     }
 
+    public ImmigrationCenter getCenterByID(Long id){
+        return centerRepository.findById(id)
+                .orElseThrow(() -> Exceptions.notFound("Center not found with id: " + id));
+    }
 
 }
