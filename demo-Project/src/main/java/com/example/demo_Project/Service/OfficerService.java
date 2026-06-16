@@ -50,7 +50,9 @@ public class OfficerService {
     }
 
     //Find Officer by Rank with minimum clearance level
-    public List<ImmigrationOfficer> findOfficerByRank(String r)
+    public List<ImmigrationOfficer> findOfficerByRank(String rank, int minimumClearanceLevel){
+
+    }
 
 
 
