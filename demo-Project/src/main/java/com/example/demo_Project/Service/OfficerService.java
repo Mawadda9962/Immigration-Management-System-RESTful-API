@@ -49,7 +49,7 @@ public class OfficerService {
         return officerRepository.findByOfficerRank(rank);
     }
 
-    //Find Officer by Rank
+    //Find Officer by Rank with minimum clearance level
 
 
 
