@@ -77,4 +77,12 @@ public class ApplicantService {
         return applicantRepository.findAll();
     }
 
+
+    public List<Applicant> findByNationality(String nationality){
+        if (nationality == null || nationality.isEmpty()){
+            throw Exceptions.badRequest("Error:Nationality is required");
+        }
+        return applicantRepository.findByNationality(nationality);
+    }
+
 }

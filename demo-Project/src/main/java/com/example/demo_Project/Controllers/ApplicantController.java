@@ -33,12 +33,12 @@ public class ApplicantController {
 
     @GetMapping
     public ResponseEntity<List<ApplicantDTO>> getAllApplicants(){
-        return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantRepository.findAll()));
+        return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantService.getAllApplicant()));
     }
 
     @GetMapping
     public ResponseEntity<List<ApplicantDTO>> findByNationality(@RequestParam String nationality){
-        return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantRepository.findByNationality(nationality)));
+        return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantService.findByNationality(nationality)));
     }
 
     @PutMapping("/{id}/flag")
