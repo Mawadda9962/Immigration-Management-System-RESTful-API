@@ -12,7 +12,7 @@ public class OfficerDTO {
     private String badgeNumber;
     private String rank;
     private int clearanceLevel;
-    private
+    private boolean acti
 
 
 }
