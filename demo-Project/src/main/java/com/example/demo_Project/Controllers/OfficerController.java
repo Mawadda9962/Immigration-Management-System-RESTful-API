@@ -22,7 +22,6 @@ public class OfficerController {
     @PostMapping
     public ResponseEntity<OfficerDTO> hireOfficer(@RequestBody ImmigrationOfficer officer){
         return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.saveOfficer(officer)));
-
     }
 
     @PostMapping("/border")
@@ -38,12 +37,10 @@ public class OfficerController {
     @GetMapping
     public ResponseEntity<List<OfficerDTO>> getAllOfficers(){
         return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.getAllOfficers()));
-
     }
 
     @PutMapping("/{id}/promote")
-    public ResponseEntity<OfficerDTO> promoteOfficer(@PathVariable Long id, @RequestParam String rank,
-                                                     @RequestParam int clearance){
+    public ResponseEntity<OfficerDTO> promoteOfficer(@PathVariable Long id, @RequestParam String rank, @RequestParam int clearance){
         return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.promoteOfficer(id,rank,clearance)));
     }
 
