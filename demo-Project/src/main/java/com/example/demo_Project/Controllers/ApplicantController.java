@@ -43,7 +43,7 @@ public class ApplicantController {
 
     @PutMapping("/{id}/flag")
     public ResponseEntity<ApplicantDTO> flagCriminalRecord(@PathVariable Long id){
-        return ResponseEntity.ok(ApplicantDTO.convertToDTO())
+        return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantService.flagCriminalRecord(id)));
     }
 
 
