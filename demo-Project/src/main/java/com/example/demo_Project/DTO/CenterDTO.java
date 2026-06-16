@@ -1,5 +1,6 @@
 package com.example.demo_Project.DTO;
 
+import com.example.demo_Project.Entities.ImmigrationCenter;
 import com.example.demo_Project.Entities.Interview;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,28 +13,25 @@ import java.util.List;
 @NoArgsConstructor
 public class CenterDTO {
     private Long id;
-    private String interviewDate;
-    private String status;
-    private String purpose;
-    private Long applicantId;
-    private Long officerId;
+    private String name;
+    private String locationCountry;
+    private String type;
+    private int dailyCapacity;
 
-    // Convert Entity to DTO
-    public static InterviewDTO convertToDTO(Interview interview) {
-        InterviewDTO dto = new InterviewDTO();
-        dto.setId(interview.getId());
-        dto.setInterviewDate(interview.getInterviewDate());
-        dto.setStatus(interview.getStatus());
-        dto.setPurpose(interview.getPurpose());
-        dto.setApplicantId(interview.getApplicant().getId());
-        dto.setOfficerId(interview.getOfficer().getId());
+    public static CenterDTO convertToDTO(ImmigrationCenter center) {
+        CenterDTO dto = new CenterDTO();
+        dto.setId(center.getId());
+        dto.setName(center.getName());
+        dto.setLocationCountry(center.getLocationCountry());
+        dto.setType(center.getType());
+        dto.setDailyCapacity(center.getDailyCapacity());
         return dto;
     }
 
-    public static List<InterviewDTO> convertToDTO(List<Interview> interviews) {
-        List<InterviewDTO> dtos = new ArrayList<>();
-        for (Interview interview : interviews) {
-            dtos.add(convertToDTO(interview));
+    public static List<CenterDTO> convertToDTO(List<ImmigrationCenter> centers) {
+        List<CenterDTO> dtos = new ArrayList<>();
+        for (ImmigrationCenter center : centers) {
+            dtos.add(convertToDTO(center));
         }
         return dtos;
     }
