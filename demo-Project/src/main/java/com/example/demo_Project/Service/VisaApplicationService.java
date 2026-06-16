@@ -35,7 +35,7 @@ public class VisaApplicationService {
         }else {
             visa.setStatus("PENDING");
         }
-        return visaApplicationRepository.save(visa)
+        return visaApplicationRepository.save(visa);
 
     }
 
