@@ -32,7 +32,19 @@ public class InterviewService {
                 .orElseThrow(() -> Exceptions.notFound("Officer not found with id: " + officerId));
 
 
-        List<Interview> existing
+        List<Interview> existing = interviewRepository.findByOfficerIdAndInterviewDate(officerId,date){
+            if (!existing.isEmpty()){
+                throw Exceptions.badRequest("Officer is booked!");
+            }
+
+            Interview interview = new Interview();
+            interview.setApplicant(applicant);
+            interview.setOfficer(officer);
+            interview.setInterviewDate(date);
+            interview.setStatus("SCHEDULED");
+
+            return interviewRepository.save(interview)
+        }
 
     }
 
