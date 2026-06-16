@@ -25,20 +25,20 @@ public class OfficerController {
 
     }
 
-    @PostMapping("/{id}")
+    @PostMapping("/border")
     public ResponseEntity<OfficerDTO> hireBorderOfficer(@RequestBody BorderControlOfficer officer) {
-        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerRepository.save(officer)));
+        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.saveOfficer(officer)));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<OfficerDTO> getOfficerById(@PathVariable Long id){
-        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Officer not found with id: " + id))));
+        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.getOfficerById(id)));
     }
 
     @GetMapping
     public ResponseEntity<List<OfficerDTO>> getAllOfficers(){
-        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.fi))
+        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.getAllOfficers()));
+
     }
 
 }
