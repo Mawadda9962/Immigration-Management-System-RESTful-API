@@ -77,6 +77,12 @@ public class OfficerService {
         return officerRepository.save(officer);
     }
 
-    public ImmigrationOfficer
+    public ImmigrationOfficer getOfficerById(Long id){
+        return officerRepository.findById(id)
+                .orElseThrow(() -> Exceptions.notFound("Officer not found with id: " + id));
+    }
 
+    public List<ImmigrationOfficer> getAllOfficers(){
+        return officerRepository.findAll();
+    }
 }
