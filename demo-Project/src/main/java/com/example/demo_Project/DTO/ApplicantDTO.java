@@ -32,6 +32,10 @@ public class ApplicantDTO {
 
    public static List<ApplicantDTO> convertToDTO(List<Applicant> applicants){
        List<ApplicantDTO> dtos = new ArrayList<>();
+       for (Applicant applicant : applicants){
+           dtos.add(convertToDTO(applicant));
+       }
+       return dtos;
    }
 
 
