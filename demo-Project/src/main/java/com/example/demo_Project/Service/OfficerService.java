@@ -8,6 +8,8 @@ import com.example.demo_Project.Repositories.InterviewRepository;
 import com.example.demo_Project.Repositories.OfficerRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class OfficerService {
 
@@ -42,7 +44,10 @@ public class OfficerService {
         return officerRepository.save(officer);
     }
 
-    //
+    //Find Officer by rank
+    public List<ImmigrationOfficer> findOfficerByRank(String rank){
+        return officerRepository.findByOfficerRank(rank);
+    }
 
 
 
