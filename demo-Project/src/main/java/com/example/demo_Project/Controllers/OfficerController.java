@@ -21,7 +21,7 @@ public class OfficerController {
 
     @PostMapping
     public ResponseEntity<OfficerDTO> hireOfficer(@RequestBody ImmigrationOfficer officer){
-        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.save);
+        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.saveOfficer(officer)));
 
     }
 

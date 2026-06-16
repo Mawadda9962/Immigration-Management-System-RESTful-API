@@ -64,6 +64,17 @@ public class OfficerService {
         return result;
     }
 
-    public ImmigrationOfficer saveOfficer
+    public ImmigrationOfficer saveOfficer(ImmigrationOfficer officer){
+        if (officer.getFirstName() == null || officer.getFirstName().isEmpty()){
+            throw Exceptions.badRequest("First name is required");
+        }
+        if (officer.getLastName() == null || officer.getLastName().isEmpty()){
+            throw Exceptions.badRequest("Last name is required");
+        }
+        if (officer.getBadgeNumber() == null || officer.getBadgeNumber().isBlank()){
+            throw Exceptions.badRequest("Badge number is required");
+        }
+        return officerRepository.save(officer);
+    }
 
 }
