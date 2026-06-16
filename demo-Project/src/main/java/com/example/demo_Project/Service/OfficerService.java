@@ -21,8 +21,8 @@ public class OfficerService {
     CenterRepository centerRepository;
 
     //Officer with clearance validation
-    public ImmigrationOfficer promoteOfficer(Long officerId, String newOfficerRank, int newClearanceLevel1){
-        if (newClearanceLevel1 < 1 || newClearanceLevel1 > 5){ //Access Level of the officer
+    public ImmigrationOfficer promoteOfficer(Long officerId, String newOfficerRank, int newClearanceLevel1) {
+        if (newClearanceLevel1 < 1 || newClearanceLevel1 > 5) { //Access Level of the officer
             throw Exceptions.badRequest("Clearance Level must be between 1 and 5");
         }
         ImmigrationOfficer officer = officerRepository.findById(officerId)
@@ -34,7 +34,7 @@ public class OfficerService {
     }
 
     //Transfer officer to new center
-    public ImmigrationOfficer transferOfficer(Long officerId, Long newCenterId){
+    public ImmigrationOfficer transferOfficer(Long officerId, Long newCenterId) {
         ImmigrationOfficer officer = officerRepository.findById(officerId)
                 .orElseThrow(() -> Exceptions.notFound("Officer not found with id: " + officerId));
 
@@ -46,19 +46,22 @@ public class OfficerService {
     }
 
     //Find Officer by rank
-    public List<ImmigrationOfficer> findOfficerByRank(String rank){
+    public List<ImmigrationOfficer> findOfficerByRank(String rank) {
         return officerRepository.findByOfficerRank(rank);
     }
 
     //Find Officer by Rank with minimum clearance level
-    public List<ImmigrationOfficer> findOfficerByRank(String rank, int minimumClearanceLevel){
+    public List<ImmigrationOfficer> findOfficerByRank(String rank, int minimumClearanceLevel) {
         List<ImmigrationOfficer> officers = officerRepository.findByOfficerRank(rank);
-        List<ImmigrationOfficer> result = new ArrayList<>()
+        List<ImmigrationOfficer> result = new ArrayList<>();
+        for (ImmigrationOfficer officer : officers) {
+            if (officer.getClearanceLevel() >= minimumClearanceLevel) {
+                result.add(officer);
+            }
+        }
 
-
+        return result;
     }
-
-
 
 
 }
