@@ -18,7 +18,7 @@ public class ApplicantController {
     @Autowired
     ApplicantService applicantService;
 
-   // @Autowired
+   @Autowired
 
     @PostMapping
     public ResponseEntity<ApplicantDTO> registerApplicant(@RequestBody Applicant applicant){
