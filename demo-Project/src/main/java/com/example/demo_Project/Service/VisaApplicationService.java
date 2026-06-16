@@ -36,8 +36,10 @@ public class VisaApplicationService {
             visa.setStatus("PENDING");
         }
         return visaApplicationRepository.save(visa);
-
     }
 
+    public VisaApplication assignOfficer(Long visaId, Long officerId){
+
+    }
 
 }
