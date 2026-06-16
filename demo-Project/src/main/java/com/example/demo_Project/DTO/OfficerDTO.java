@@ -11,6 +11,7 @@ public class OfficerDTO {
     private String lastName;
     private String badgeNumber;
     private String rank;
+    private int clearanceLevel;
     private
 
 
