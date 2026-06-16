@@ -6,6 +6,7 @@ import com.example.demo_Project.Exceptions.Exceptions;
 import com.example.demo_Project.Repositories.CenterRepository;
 import com.example.demo_Project.Repositories.InterviewRepository;
 import com.example.demo_Project.Repositories.OfficerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,10 +15,10 @@ import java.util.List;
 @Service
 public class OfficerService {
 
-    @Override
+    @Autowired
     OfficerRepository officerRepository;
 
-    @Override
+    @Autowired
     CenterRepository centerRepository;
 
     //Officer with clearance validation
