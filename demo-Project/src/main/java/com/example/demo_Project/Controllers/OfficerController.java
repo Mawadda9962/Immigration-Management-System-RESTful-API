@@ -47,5 +47,8 @@ public class OfficerController {
         return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.promoteOfficer(id,rank,clearance)));
     }
 
-
+    @PutMapping("/{id}/transfer/{centerId}")
+    public ResponseEntity<OfficerDTO> transferOfficer(@PathVariable Long id, @PathVariable Long centerId){
+        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.transferOfficer(id, centerId)));
+    }
 }
