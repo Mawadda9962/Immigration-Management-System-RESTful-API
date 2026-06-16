@@ -43,10 +43,12 @@ public class InterviewService {
             interview.setInterviewDate(date);
             interview.setStatus("SCHEDULED");
 
-            return interviewRepository.save(interview)
+            return interviewRepository.save(interview);
         }
-
     }
 
+    public Interview cancelInterview(Long interviewId) {
 
-}
+
+
+    }
