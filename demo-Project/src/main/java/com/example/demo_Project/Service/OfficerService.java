@@ -49,6 +49,8 @@ public class OfficerService {
         return officerRepository.findByOfficerRank(rank);
     }
 
+    //Find Officer by Rank
+
 
 
 
