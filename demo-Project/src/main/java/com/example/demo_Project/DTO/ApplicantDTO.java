@@ -7,7 +7,8 @@ public class ApplicantDTO {
     private String firstName;
     private String lastName;
     private String nationality;
-    private
+    private String passportNumber;
+
 
 
 
