@@ -57,7 +57,9 @@ public class VisaApplicationService {
 
     //Process Visa
     public VisaApplication processVisa(Long visaId, String newStatus, String notes){
-        VisaApplication visa =
+        VisaApplication visa = visaApplicationRepository.findById(visaId)
+                .orElseThrow(() -> Exceptions.notFound("Visa application not found with id: " + visaId));
+
     }
 
 
