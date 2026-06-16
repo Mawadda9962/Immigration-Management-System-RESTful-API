@@ -31,6 +31,7 @@ public class VisaApplicationService {
 
         if (applicant.isCriminalRecorde()){
             visa.setStatus("REJECTED");
+            visa.getVisaType("")
         }
     }
 
