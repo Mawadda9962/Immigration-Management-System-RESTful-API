@@ -3,6 +3,7 @@ package com.example.demo_Project.Controllers;
 import com.example.demo_Project.DTO.ApplicantDTO;
 import com.example.demo_Project.Entities.Applicant;
 import com.example.demo_Project.Entities.AsylumSeeker;
+import com.example.demo_Project.Repositories.ApplicantRepository;
 import com.example.demo_Project.Service.ApplicantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class ApplicantController {
     ApplicantService applicantService;
 
     @Autowired
-    ApplicantController applicantController;
+    ApplicantRepository applicantRepository;
 
     @PostMapping
     public ResponseEntity<ApplicantDTO> registerApplicant(@RequestBody Applicant applicant){
@@ -32,7 +33,7 @@ public class ApplicantController {
 
     @GetMapping
     public ResponseEntity<List<ApplicantDTO>> getAllApplicants(){
-
+        return ResponseEntity.ok(ApplicantDTO.convertToDTO(applicantRepository.findAll()));
     }
 
 }
