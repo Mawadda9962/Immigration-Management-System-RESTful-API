@@ -64,5 +64,8 @@ public class OfficerService {
         return result;
     }
 
+    public ImmigrationOfficer saveOfficer(ImmigrationOfficer officer){
+
+    }
 
 }

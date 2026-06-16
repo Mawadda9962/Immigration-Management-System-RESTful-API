@@ -19,12 +19,9 @@ public class OfficerController {
     @Autowired
     OfficerService officerService;
 
-    @Autowired
-    OfficerRepository officerRepository;
-
     @PostMapping
     public ResponseEntity<OfficerDTO> hireOfficer(@RequestBody ImmigrationOfficer officer){
-        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerRepository.save(officer)));
+        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerService.save);
 
     }
 
@@ -40,6 +37,8 @@ public class OfficerController {
     }
 
     @GetMapping
-    public ResponseEntity<List>
+    public ResponseEntity<List<OfficerDTO>> getAllOfficers(){
+        return ResponseEntity.ok(OfficerDTO.convertToDTO(officerRepository.))
+    }
 
 }

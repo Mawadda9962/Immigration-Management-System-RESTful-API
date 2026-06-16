@@ -18,8 +18,6 @@ public class ApplicantController {
     @Autowired
     ApplicantService applicantService;
 
-    @Autowired
-    ApplicantRepository applicantRepository;
 
     @PostMapping
     public ResponseEntity<ApplicantDTO> registerApplicant(@RequestBody Applicant applicant){
