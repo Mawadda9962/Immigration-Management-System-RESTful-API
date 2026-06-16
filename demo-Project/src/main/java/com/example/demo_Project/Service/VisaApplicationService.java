@@ -56,7 +56,9 @@ public class VisaApplicationService {
     }
 
     //Process Visa
-    public VisaApplication processVisa
+    public VisaApplication processVisa(Long visaId, String newStatus, String notes){
+        VisaApplication visa =
+    }
 
 
 }
