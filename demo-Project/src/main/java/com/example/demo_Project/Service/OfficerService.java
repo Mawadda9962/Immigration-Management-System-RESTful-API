@@ -24,7 +24,8 @@ public class OfficerService {
                 .orElseThrow(() -> Exceptions.notFound("Officer not found with id: " + officerId));
 
         officer.setOfficerRank(newOfficerRank);
-        officer.getClearanceLevel(newClearanceLevel1);
+        officer.setClearanceLevel(newClearanceLevel1);
+        return
     }
 
 
