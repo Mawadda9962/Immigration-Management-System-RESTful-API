@@ -18,7 +18,7 @@ public class ApplicantController {
    // @Autowired
 
     public ApplicantDTO registerApplicant(@RequestBody Applicant applicant){
-
+        return ApplicantDTO.convertToDTO(applicantService.saveApplicant(applicant));,
     }
 
 
