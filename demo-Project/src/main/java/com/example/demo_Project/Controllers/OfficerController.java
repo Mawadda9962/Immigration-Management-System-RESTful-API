@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("officers")
 public class OfficerController {
@@ -36,5 +38,8 @@ public class OfficerController {
         return ResponseEntity.ok(OfficerDTO.convertToDTO(officerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Officer not found with id: " + id))));
     }
+
+    @GetMapping
+    public ResponseEntity<List>
 
 }
