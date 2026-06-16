@@ -21,7 +21,10 @@ public class CenterService {
             throw Exceptions.badRequest("Location country is required");
         }
         if (center.getType() ==null || center.getType().isBlank()){
-            throw Exceptions.badRequest("Center Type is ")
+            throw Exceptions.badRequest("Center Type is required");
+        }
+        if (center.getDailyCapacity() <= 0){
+            throw Exceptions.badRequest("Daily Capacity musy")
         }
 
 
