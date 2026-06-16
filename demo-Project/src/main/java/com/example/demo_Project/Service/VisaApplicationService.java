@@ -67,6 +67,6 @@ public class VisaApplicationService {
         }
         visa.setStatus(newStatus);
         visa.setOfficerNotes(notes);
-        return visaApplicationRepository.save(visa)
+        return visaApplicationRepository.save(visa);
     }
 }
