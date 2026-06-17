@@ -53,4 +53,11 @@ public class InterviewService {
         interview.setStatus("COMPLETED");
         return interviewRepository.save(interview);
     }
+
+    public Interview cancelInterview(Long interviewId){
+        Interview interview = interviewRepository.findById(interviewId)
+                .orElseThrow(() -> Exceptions.notFound("Interview not found with id: " + interviewId));
+
+        interview.setStatus("CANC");
+    }
 }
