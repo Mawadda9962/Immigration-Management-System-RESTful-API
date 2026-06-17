@@ -63,6 +63,6 @@ public class InterviewService {
     }
 
     public List<Interview> getOfficerSchedule(Long officerId, String date){
-        return interviewRepository.findByOfficerIdAndInterviewDate(officerId,d)
+        return interviewRepository.findByOfficerIdAndInterviewDate(officerId,date);
     }
 }
