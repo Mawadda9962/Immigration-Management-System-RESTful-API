@@ -35,7 +35,9 @@ public class InterviewController {
     @GetMapping("/officer/{officerId}/date/{date}")
     public ResponseEntity<List<InterviewDTO>> getOfficerSchedule(@PathVariable Long officerId, @PathVariable String date){
 
+        return ResponseEntity.ok(InterviewDTO.convertToDTO(interviewService.getOfficerSchedule(officerId,d)))
     }
+
 
 
 
