@@ -58,6 +58,7 @@ public class InterviewService {
         Interview interview = interviewRepository.findById(interviewId)
                 .orElseThrow(() -> Exceptions.notFound("Interview not found with id: " + interviewId));
 
-        interview.setStatus("CANC");
+        interview.setStatus("CANCELLED");
+        return interviewRepository.save(interview)
     }
 }
