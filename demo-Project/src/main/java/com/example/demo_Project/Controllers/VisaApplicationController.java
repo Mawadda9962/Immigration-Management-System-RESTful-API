@@ -20,10 +20,11 @@ public class VisaApplicationController {
         return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.submitApplication(applicantId,type)));
     }
 
-    @PostMapping("/{visaId}/assign/{officerId}")
+    @PutMapping("/{visaId}/assign/{officerId}")
     public ResponseEntity<VisaApplicationDTO> assignOfficer(@PathVariable Long visaId, @PathVariable Long officerId){
         return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.assignOfficer(visaId, officerId)));
     }
+
 
     @PutMapping("/{visaId}/process")
     public ResponseEntity<VisaApplicationDTO> processVisa(@PathVariable Long visaId, @RequestParam String status, @RequestParam String notes){
