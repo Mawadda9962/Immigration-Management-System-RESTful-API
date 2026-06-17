@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("visas")
 public class VisaApplicationController {
@@ -18,13 +20,15 @@ public class VisaApplicationController {
         return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.submitApplication(applicantId,type)));
     }
 
+
+
     @PutMapping("/{visaId}/process")
     public ResponseEntity<VisaApplicationDTO> processVisa(@PathVariable Long visaId, @RequestParam String status, @RequestParam String notes){
         return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.processVisa(visaId, status,notes)));
     }
 
     @GetMapping("/applicant/{applicantId}")
-    public ResponseEntity<VisaApplicationDTO>
+    public ResponseEntity<List<VisaApplicationDTO>>
 
 
 }
