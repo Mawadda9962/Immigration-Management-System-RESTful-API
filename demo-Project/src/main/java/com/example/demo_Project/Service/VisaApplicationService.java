@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.awt.font.TextHitInfo;
+import java.util.List;
 
 @Service
 public class VisaApplicationService {
@@ -68,5 +69,10 @@ public class VisaApplicationService {
         visa.setStatus(newStatus);
         visa.setOfficerNotes(notes);
         return visaApplicationRepository.save(visa);
+    }
+
+    //
+    public List<VisaApplication> getVisaByApplicant(Long applicantId){
+        return visaApplicationRepository.findByApplicantId(applicantId);
     }
 }
