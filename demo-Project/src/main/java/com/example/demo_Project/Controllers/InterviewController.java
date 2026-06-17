@@ -16,5 +16,6 @@ public class InterviewController {
     @PostMapping("/schedule/{applicantId}/{officerId}")
     public ResponseEntity<InterviewDTO> scheduleInterview(@PathVariable Long applicantId, @PathVariable Long officerId, @RequestParam String date){
 
+        return
     }
 }
