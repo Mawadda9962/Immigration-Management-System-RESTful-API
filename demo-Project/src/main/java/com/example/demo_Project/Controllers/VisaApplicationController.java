@@ -20,8 +20,10 @@ public class VisaApplicationController {
 
     @PutMapping("/{visaId}/process")
     public ResponseEntity<VisaApplicationDTO> processVisa(@PathVariable Long visaId, @RequestParam String status, @RequestParam String notes){
-
+        return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.processVisa(visaId, status,notes)));
     }
+
+
 
 
 }
