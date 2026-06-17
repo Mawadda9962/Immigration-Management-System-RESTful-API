@@ -23,7 +23,8 @@ public class VisaApplicationController {
         return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.processVisa(visaId, status,notes)));
     }
 
-
+    @GetMapping("/applicant/{applicantId}")
+    public ResponseEntity<VisaApplicationDTO>
 
 
 }
