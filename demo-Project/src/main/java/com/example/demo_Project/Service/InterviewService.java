@@ -61,4 +61,8 @@ public class InterviewService {
         interview.setStatus("CANCELLED");
         return interviewRepository.save(interview);
     }
+
+    public List<Interview> getOfficerSchedule(Long officerId, String date){
+        return interviewRepository.findByOfficerIdAndInterviewDate(officerId,d)
+    }
 }
