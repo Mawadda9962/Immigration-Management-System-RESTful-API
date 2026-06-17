@@ -1,5 +1,6 @@
 package com.example.demo_Project.Controllers;
 
+import com.example.demo_Project.DTO.VisaApplicationDTO;
 import com.example.demo_Project.Service.VisaApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ public class VisaApplicationController {
     VisaApplicationService visaApplicationService;
 
     @PostMapping("/submit/{applicantId}")
-    public ResponseEntity
+    public ResponseEntity<VisaApplicationDTO> submitApplication(@)
 
 
 
