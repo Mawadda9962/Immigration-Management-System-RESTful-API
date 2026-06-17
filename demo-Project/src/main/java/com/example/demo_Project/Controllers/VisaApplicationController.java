@@ -20,7 +20,10 @@ public class VisaApplicationController {
         return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.submitApplication(applicantId,type)));
     }
 
-
+    @PostMapping("/{visaId}/assign/{officerId}")
+    public ResponseEntity<VisaApplicationDTO> assignOfficer(@PathVariable Long visaId, @PathVariable Long officerId){
+        return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.assignOfficer(visaId, officerId)));
+    }
 
     @PutMapping("/{visaId}/process")
     public ResponseEntity<VisaApplicationDTO> processVisa(@PathVariable Long visaId, @RequestParam String status, @RequestParam String notes){
@@ -28,7 +31,14 @@ public class VisaApplicationController {
     }
 
     @GetMapping("/applicant/{applicantId}")
-    public ResponseEntity<List<VisaApplicationDTO>>
+    public ResponseEntity<List<VisaApplicationDTO>> getVisaByApplicant(@PathVariable Long applicantId){
+        return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.getVisaByApplicant(applicantId)));
+    }
+
+    @GetMapping("/status/{status}")
+    public ResponseEntity<List<VisaApplicationDTO>> getVisaByStatus(@PathVariable String status){
+        return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.gitVisaByStatus(status)));
+    }
 
 
 }
