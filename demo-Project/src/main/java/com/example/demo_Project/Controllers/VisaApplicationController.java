@@ -19,7 +19,9 @@ public class VisaApplicationController {
     }
 
     @PutMapping("/{visaId}/process")
-    public ResponseEntity<VisaApplicationDTO> processVisa(@PathVariable Long visaId, @RequestParam String status, )
+    public ResponseEntity<VisaApplicationDTO> processVisa(@PathVariable Long visaId, @RequestParam String status, @RequestParam String notes){
+
+    }
 
 
 }
