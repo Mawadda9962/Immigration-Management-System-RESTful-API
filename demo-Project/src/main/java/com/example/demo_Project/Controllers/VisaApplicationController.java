@@ -40,5 +40,4 @@ public class VisaApplicationController {
         return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.gitVisaByStatus(status)));
     }
 
-
 }
