@@ -71,8 +71,12 @@ public class VisaApplicationService {
         return visaApplicationRepository.save(visa);
     }
 
-    //
+    //Get all visas for a specific applicant
     public List<VisaApplication> getVisaByApplicant(Long applicantId){
         return visaApplicationRepository.findByApplicantId(applicantId);
+    }
+
+    public List<VisaApplication> gitVisaByStatus(String status){
+        return visaApplicationRepository.findByStatus(status);
     }
 }
