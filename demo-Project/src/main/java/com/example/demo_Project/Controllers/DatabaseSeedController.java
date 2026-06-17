@@ -19,7 +19,7 @@ public class DatabaseSeedController {
     @Autowired
     ApplicantRepository applicantRepository;
 
-    @PostMapping("/api/seed")
+    @PostMapping("seed")
     public ResponseEntity<String> seedDatabase() {
 
         ImmigrationCenter center1 = new ImmigrationCenter();
