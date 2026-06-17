@@ -76,6 +76,7 @@ public class VisaApplicationService {
         return visaApplicationRepository.findByApplicantId(applicantId);
     }
 
+    //Get visa by status
     public List<VisaApplication> gitVisaByStatus(String status){
         return visaApplicationRepository.findByStatus(status);
     }
