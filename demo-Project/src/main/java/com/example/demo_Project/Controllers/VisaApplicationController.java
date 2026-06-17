@@ -16,9 +16,10 @@ public class VisaApplicationController {
     @PostMapping("/submit/{applicantId}")
     public ResponseEntity<VisaApplicationDTO> submitApplication(@PathVariable Long applicantId, @RequestParam String type){
         return ResponseEntity.ok(VisaApplicationDTO.convertToDTO(visaApplicationService.submitApplication(applicantId,type)));
-
     }
 
+    @PutMapping("/{visaId}/process")
+    public ResponseEntity<VisaApplicationDTO> processVisa(@PathVariable Long visaId,)
 
 
 }
