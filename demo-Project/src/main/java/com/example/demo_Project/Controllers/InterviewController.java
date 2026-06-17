@@ -21,6 +21,8 @@ public class InterviewController {
 
 
     @PutMapping("/{id}/complete")
-    public ResponseEntity<InterviewDTO> completeInterview
+    public ResponseEntity<InterviewDTO> completeInterview(@PathVariable Long id){
+        return ResponseEntity.ok(InterviewDTO.convertToDTO(interviewService.completeInterview(id)));
+    }
 
 }
