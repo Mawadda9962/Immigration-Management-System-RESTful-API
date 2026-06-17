@@ -21,5 +21,6 @@ public class InterviewController {
 
 
     @PutMapping("/{id}/complete")
+    public ResponseEntity<InterviewDTO> completeInterview
 
 }
